@@ -37,7 +37,7 @@
                                 </constraints>
                                 <state key="normal" title="Manage Teacher"/>
                                 <connections>
-                                    <segue destination="rPd-H0-lF0" kind="show" id="Dem-69-mgy"/>
+                                    <segue destination="vSd-Na-1dA" kind="show" id="uqY-PQ-3uV"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dF3-Jv-fcm">
@@ -142,8 +142,16 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Manage" id="VYV-1B-Aiz">
-                                        <barButtonItem key="leftBarButtonItem" title="Exit" id="Mes-lS-saP"/>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="qot-0Y-3eE"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Exit" id="Mes-lS-saP">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="XIU-CX-pjg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="+" id="qot-0Y-3eE">
+                                            <connections>
+                                                <segue destination="rPd-H0-lF0" kind="show" id="v7o-1z-9jz"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -165,7 +173,6 @@
                         <viewLayoutGuide key="safeArea" id="f8L-lu-60L"/>
                     </view>
                     <connections>
-                        <outlet property="addCell" destination="qot-0Y-3eE" id="uO4-C1-iAf"/>
                         <outlet property="tableView" destination="fH2-fR-a83" id="kTZ-w6-3r2"/>
                     </connections>
                 </viewController>
@@ -181,13 +188,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-1m-NIo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-yy-zCC">
-                                <rect key="frame" x="16" y="27" width="46" height="30"/>
-                                <state key="normal" title="Return"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ep-FR-9kv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="154"/>
                                 <subviews>
@@ -196,6 +196,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="nameText:" destination="7h2-8f-SrK" eventType="editingDidEnd" id="Vty-bx-k9P"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-PK-WAT">
                                         <rect key="frame" x="69" y="66" width="237" height="30"/>
@@ -207,6 +210,7 @@
                                         <rect key="frame" x="172" y="104" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
+                                            <action selector="addInfo:" destination="7h2-8f-SrK" eventType="touchUpInside" id="fYo-wt-QCq"/>
                                             <action selector="addInfo:" destination="rPd-H0-lF0" eventType="touchDown" id="sHd-jB-fB7"/>
                                         </connections>
                                     </button>
@@ -223,15 +227,34 @@
                                     <constraint firstItem="QzA-qI-iqV" firstAttribute="leading" secondItem="KWp-PK-WAT" secondAttribute="leading" id="tDP-hU-12t"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-1m-NIo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-yy-zCC">
+                                <rect key="frame" x="15" y="27" width="46" height="30"/>
+                                <state key="normal" title="Return"/>
+                                <connections>
+                                    <segue destination="vSd-Na-1dA" kind="show" id="d01-os-feA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik7-V1-ooJ">
+                                <rect key="frame" x="323" y="27" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="cleanInfo:" destination="rPd-H0-lF0" eventType="touchUpInside" id="a6r-bR-evp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aAq-1m-NIo" secondAttribute="trailing" id="6vg-EG-kEq"/>
+                            <constraint firstItem="Ik7-V1-ooJ" firstAttribute="baseline" secondItem="4xq-yy-zCC" secondAttribute="baseline" id="7bP-c5-js2"/>
                             <constraint firstItem="aAq-1m-NIo" firstAttribute="trailing" secondItem="8Ep-FR-9kv" secondAttribute="trailing" id="GSN-bj-ELp"/>
                             <constraint firstItem="8Ep-FR-9kv" firstAttribute="top" secondItem="aAq-1m-NIo" secondAttribute="bottom" id="NVP-1S-eEv"/>
                             <constraint firstItem="aAq-1m-NIo" firstAttribute="leading" secondItem="7mO-Dd-kue" secondAttribute="leading" id="ONv-gE-54v"/>
                             <constraint firstItem="4xq-yy-zCC" firstAttribute="centerY" secondItem="aAq-1m-NIo" secondAttribute="centerY" id="e4K-QF-xwE"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4xq-yy-zCC" secondAttribute="trailingMargin" id="fGn-q2-sUk"/>
+                            <constraint firstItem="Ik7-V1-ooJ" firstAttribute="trailing" secondItem="7mO-Dd-kue" secondAttribute="trailingMargin" id="jTq-YQ-Z52"/>
                             <constraint firstItem="aAq-1m-NIo" firstAttribute="leading" secondItem="8Ep-FR-9kv" secondAttribute="leading" id="sKx-0S-hHZ"/>
                             <constraint firstItem="c0d-Cs-okG" firstAttribute="bottom" secondItem="8Ep-FR-9kv" secondAttribute="bottom" constant="449" id="ucD-yr-Yiy"/>
                             <constraint firstItem="4xq-yy-zCC" firstAttribute="leading" secondItem="7mO-Dd-kue" secondAttribute="leadingMargin" id="vp7-Hf-7ln"/>
@@ -245,8 +268,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCJ-Ci-uGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7h2-8f-SrK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="545" y="946"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uqY-PQ-3uV"/>
+    </inferredMetricsTieBreakers>
 </document>

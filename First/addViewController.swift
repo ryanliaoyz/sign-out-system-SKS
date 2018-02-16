@@ -19,8 +19,7 @@ class addViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var nameArray: [String] = []
-    var emailArray: [String] = []
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,14 +29,26 @@ class addViewController: UIViewController {
     
     
     @IBAction func addInfo(_ sender: Any){
-        var nameArray = UserDefaults.standard.object(forKey: "nameKey") as! Array<Any>
-        var emailArray = UserDefaults.standard.object(forKey: "emailKey") as! Array<Any>
-        nameArray.append(nameText.text!)
-        emailArray.append(emailText.text!)
-        print(nameArray)
-        print(emailArray)
-        UserDefaults.standard.set(nameArray, forKey: "nameKey")
-        UserDefaults.standard.set(emailArray, forKey: "emailKey")
+        globalVariable.nameArray.append(nameText.text!)
+        globalVariable.emailArray.append(emailText.text!)
+        print(globalVariable.nameArray)
+        print(globalVariable.emailArray)
+        UserDefaults.standard.set(globalVariable.nameArray, forKey: "nameKey")
+        UserDefaults.standard.set(globalVariable.emailArray, forKey: "emailKey")
+    }
+    
+    struct globalVariable{
+        //static var nameArray = ["MOD"]
+        //static var emailArray = ["mod@southkentschool.org"]
+        static var nameArray = UserDefaults.standard.object(forKey: "nameKey") as! Array<Any>
+        static var emailArray = UserDefaults.standard.object(forKey: "emailKey") as! Array<Any>
+    }
+    
+    @IBAction func cleanInfo(_ sender: Any) {
+        UserDefaults.standard.set(["MOD"], forKey: "nameKey")
+        UserDefaults.standard.set(["mod@southkentschool.org"], forKey: "emailKey")
+        globalVariable.nameArray = ["MOD"]
+        globalVariable.emailArray = ["mod@southkentschool.org"]
     }
     
 
@@ -52,3 +63,4 @@ class addViewController: UIViewController {
     */
 
 }
+

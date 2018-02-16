@@ -19,14 +19,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return pickerData[row] as? String
     }
 
     
     @IBOutlet weak var picker: UIPickerView!
     
     
-    var pickerData: [String] = [String]()
+
+    var pickerData: Array<Any> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.picker.dataSource = self
         
         // Input data into the Array:
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+        pickerData = addViewController.globalVariable.nameArray
+        
+        
+        
     }
+    
+
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

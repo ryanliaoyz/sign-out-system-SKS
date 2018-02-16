@@ -29,14 +29,14 @@ class manageViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data.append("Ryan")
-        data.append("Liao")
-        data.append("Yunze")
+        data = addViewController.globalVariable.nameArray as! [String]
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
     private var data: [String] = []
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
