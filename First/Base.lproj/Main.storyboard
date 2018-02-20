@@ -58,13 +58,13 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your content here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-wB-Wrv">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Enter your content here" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-wB-Wrv">
                                 <rect key="frame" x="-1" y="375" width="375" height="137"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="137" id="cgQ-ln-oRK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KL6-6k-0s9">
                                 <rect key="frame" x="1" y="554" width="373" height="29"/>
@@ -72,6 +72,17 @@
                                     <constraint firstAttribute="height" constant="29" id="vFb-77-oX9"/>
                                 </constraints>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WcU-4u-Flx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-tg-6C1">
+                                <rect key="frame" x="243" y="601" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TsV-aH-zjE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,7 +115,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="contentText" destination="Fyl-wB-Wrv" id="Jvv-g5-mXI"/>
+                        <outlet property="nameText" destination="vQ6-mx-lnO" id="cWV-11-0ed"/>
                         <outlet property="picker" destination="dF3-Jv-fcm" id="Hli-lf-Hsd"/>
+                        <outlet property="titleText" destination="V44-r9-h1r" id="YjQ-f8-mcQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -17,6 +17,7 @@ class addViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
 
@@ -31,17 +32,21 @@ class addViewController: UIViewController {
     @IBAction func addInfo(_ sender: Any){
         globalVariable.nameArray.append(nameText.text!)
         globalVariable.emailArray.append(emailText.text!)
-        print(globalVariable.nameArray)
-        print(globalVariable.emailArray)
+        //print(globalVariable.nameArray[0], globalVariable.emailArray[0], globalVariable.nameArray[1], globalVariable.emailArray[1])
         UserDefaults.standard.set(globalVariable.nameArray, forKey: "nameKey")
         UserDefaults.standard.set(globalVariable.emailArray, forKey: "emailKey")
     }
     
-    struct globalVariable{
+    struct globalVariable{ 
         //static var nameArray = ["MOD"]
         //static var emailArray = ["mod@southkentschool.org"]
+        //static var nameArray = ["MOD"]
+        //static var emailArray = ["mod@"]
         static var nameArray = UserDefaults.standard.object(forKey: "nameKey") as! Array<Any>
         static var emailArray = UserDefaults.standard.object(forKey: "emailKey") as! Array<Any>
+        static var emailAddress = [""]
+        
+
     }
     
     @IBAction func cleanInfo(_ sender: Any) {

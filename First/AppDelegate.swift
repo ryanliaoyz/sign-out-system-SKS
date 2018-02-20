@@ -12,10 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = UserDefaults.standard.object(forKey: "nameKey")
+        if defaults == nil {
+            UserDefaults.standard.set((["MOD"] as Array<Any>), forKey: "nameKey")
+        }
+        let defaults2 = UserDefaults.standard.object(forKey: "emailKey")
+        if defaults2 == nil {
+            UserDefaults.standard.set((["mod@southkentschool.org"] as Array<Any>), forKey: "emailKey")
+        }
         return true
     }
 
