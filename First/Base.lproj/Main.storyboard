@@ -53,13 +53,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" text="Sign me out" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V44-r9-h1r">
-                                <rect key="frame" x="-1" y="344" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="344" width="373" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Enter your content here" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-wB-Wrv">
-                                <rect key="frame" x="-1" y="375" width="375" height="137"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter your content here" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-wB-Wrv">
+                                <rect key="frame" x="1" y="375" width="373" height="137"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="137" id="cgQ-ln-oRK"/>
                                 </constraints>
@@ -100,7 +100,7 @@
                             <constraint firstItem="OPd-EC-QVM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V44-r9-h1r" secondAttribute="trailing" id="Klf-KU-f8i"/>
                             <constraint firstItem="Fyl-wB-Wrv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KL6-6k-0s9" secondAttribute="trailing" id="NnW-mq-MOy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cu6-cc-Lob" secondAttribute="trailing" constant="2" id="Noe-Xb-oKb"/>
-                            <constraint firstItem="V44-r9-h1r" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fyl-wB-Wrv" secondAttribute="trailing" id="VWM-eQ-baY"/>
+                            <constraint firstItem="V44-r9-h1r" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fyl-wB-Wrv" secondAttribute="trailing" constant="-1" id="VWM-eQ-baY"/>
                             <constraint firstItem="Cu6-cc-Lob" firstAttribute="leading" secondItem="dF3-Jv-fcm" secondAttribute="leading" id="XId-xG-Egi"/>
                             <constraint firstItem="dF3-Jv-fcm" firstAttribute="top" secondItem="OPd-EC-QVM" secondAttribute="bottom" id="bKG-Hc-UGM"/>
                             <constraint firstItem="vQ6-mx-lnO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="ghl-sr-6jh"/>
@@ -109,7 +109,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSv-MQ-PFW" secondAttribute="trailing" constant="3" id="n9a-Ag-ySN"/>
                             <constraint firstItem="dF3-Jv-fcm" firstAttribute="centerX" secondItem="KL6-6k-0s9" secondAttribute="centerX" id="puN-oM-qvJ"/>
                             <constraint firstItem="OPd-EC-QVM" firstAttribute="top" secondItem="Cu6-cc-Lob" secondAttribute="bottom" constant="17" id="q0i-M3-JIp"/>
-                            <constraint firstItem="V44-r9-h1r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fyl-wB-Wrv" secondAttribute="leading" id="sT7-YU-wx8"/>
+                            <constraint firstItem="V44-r9-h1r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fyl-wB-Wrv" secondAttribute="leading" constant="-1" id="sT7-YU-wx8"/>
                             <constraint firstItem="KL6-6k-0s9" firstAttribute="top" secondItem="sSv-MQ-PFW" secondAttribute="bottom" constant="5" id="vYf-MC-cg2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -244,8 +244,8 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-1m-NIo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-yy-zCC">
-                                <rect key="frame" x="15" y="27" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-yy-zCC">
+                                <rect key="frame" x="16" y="27" width="46" height="30"/>
                                 <state key="normal" title="Return"/>
                                 <connections>
                                     <segue destination="vSd-Na-1dA" kind="show" id="d01-os-feA"/>
@@ -262,13 +262,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aAq-1m-NIo" secondAttribute="trailing" id="6vg-EG-kEq"/>
-                            <constraint firstItem="Ik7-V1-ooJ" firstAttribute="baseline" secondItem="4xq-yy-zCC" secondAttribute="baseline" id="7bP-c5-js2"/>
                             <constraint firstItem="aAq-1m-NIo" firstAttribute="trailing" secondItem="8Ep-FR-9kv" secondAttribute="trailing" id="GSN-bj-ELp"/>
+                            <constraint firstItem="Ik7-V1-ooJ" firstAttribute="trailing" secondItem="7mO-Dd-kue" secondAttribute="trailingMargin" id="LYa-zL-kw4"/>
                             <constraint firstItem="8Ep-FR-9kv" firstAttribute="top" secondItem="aAq-1m-NIo" secondAttribute="bottom" id="NVP-1S-eEv"/>
                             <constraint firstItem="aAq-1m-NIo" firstAttribute="leading" secondItem="7mO-Dd-kue" secondAttribute="leading" id="ONv-gE-54v"/>
+                            <constraint firstItem="Ik7-V1-ooJ" firstAttribute="baseline" secondItem="4xq-yy-zCC" secondAttribute="baseline" id="TPG-Ip-Qsf"/>
                             <constraint firstItem="4xq-yy-zCC" firstAttribute="centerY" secondItem="aAq-1m-NIo" secondAttribute="centerY" id="e4K-QF-xwE"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4xq-yy-zCC" secondAttribute="trailingMargin" id="fGn-q2-sUk"/>
-                            <constraint firstItem="Ik7-V1-ooJ" firstAttribute="trailing" secondItem="7mO-Dd-kue" secondAttribute="trailingMargin" id="jTq-YQ-Z52"/>
                             <constraint firstItem="aAq-1m-NIo" firstAttribute="leading" secondItem="8Ep-FR-9kv" secondAttribute="leading" id="sKx-0S-hHZ"/>
                             <constraint firstItem="c0d-Cs-okG" firstAttribute="bottom" secondItem="8Ep-FR-9kv" secondAttribute="bottom" constant="449" id="ucD-yr-Yiy"/>
                             <constraint firstItem="4xq-yy-zCC" firstAttribute="leading" secondItem="7mO-Dd-kue" secondAttribute="leadingMargin" id="vp7-Hf-7ln"/>
