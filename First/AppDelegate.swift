@@ -13,18 +13,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let defaults = UserDefaults.standard.object(forKey: "nameKey")
-        if defaults == nil {
-            UserDefaults.standard.set((["MOD"] as Array<Any>), forKey: "nameKey")
+        //  Save contacts in UserDefaults forKey "contacts"
+        let contactsDefault = UserDefaults.standard.array(forKey: "contacts")
+        if contactsDefault == nil {
+            //  Dictionary
+            var contactInfo = [String : String]()
+            contactInfo["nameKey"] = "MOD"
+            contactInfo["emailKey"] = "mod@southkentschool.org"
+            let contacts = [contactInfo]
+            UserDefaults.standard.set(contacts as Array<AnyObject>, forKey: "contacts")
         }
-        let defaults2 = UserDefaults.standard.object(forKey: "emailKey")
-        if defaults2 == nil {
-            UserDefaults.standard.set((["mod@southkentschool.org"] as Array<Any>), forKey: "emailKey")
+        //  Save sent list in UserDefaults forKey "emails"
+        let emailsDefault = UserDefaults.standard.array(forKey: "emails")
+        if emailsDefault == nil {
+            var emailsTest = [String: String]()
+            emailsTest["emailAddress"] = "mod@southkentschool.org"
+            emailsTest["title"] = "Test title"
+            emailsTest["content"] = "Test content"
+            let emails = [emailsTest]
+            UserDefaults.standard.set(emails as Array<AnyObject>, forKey: "emails")
         }
+        
         return true
     }
 
